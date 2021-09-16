@@ -3,7 +3,17 @@
   и прореживает ее (т.е. удаляет последнюю 1/10 символов).
   Если строка состоит из 21 символа, 1/10 символов будет равно 2,1 символа,
   поэтому функция удаляет 3 символа (округляем «вверх»)
-*/
+  */$(".ripple").on("click",function(event){
+    $(this).append("<span class='ripple-effect'>");
+    $(this).find(".ripple-effect").css({
+       left:event.pageX-$(this).position().left,
+        top:event.pageY-$(this).position().top
+      }).animate({
+        opacity: 0,
+      }, 1500, function() {
+       $(this).remove();
+    });
+  });
 
 //function to create buttons
     function view(){
@@ -19,7 +29,7 @@
            var result = solve(dataConverted);
            document.getElementById("result").innerHTML = "Обрабатываем данные...";
            document.getElementById("result-1").innerHTML = "Введенная строка: " + "  " + dataConverted;
-           document.getElementById("result-2").innerHTML = "эквивалент в азбуке Морзе:  " + result;
+           document.getElementById("result-2").innerHTML = "Эквивалент в азбуке Морзе:  " + result;
         }
     }
 
