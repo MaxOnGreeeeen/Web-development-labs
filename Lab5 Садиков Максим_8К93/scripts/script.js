@@ -15,13 +15,15 @@
         if (dataConverted === -1) document.getElementById("result").innerHTML = "Некорректно введены данные";
         else if (isNaN(dataConverted)) document.getElementById("result").innerHTML = "Введена пустая строка";
         else{
-
            var result = solve(dataConverted);
            document.getElementById("result").innerHTML = "Обрабатываем данные...";
            document.getElementById("result-1").innerHTML = dataConverted;
            if ( result != -1) document.getElementById("result-2").innerHTML = result;
            else document.getElementById("result-2").innerHTML = "Таких чисел не существует";
         }
+    }
+    function insertAfter(newNode, existingNode) {
+        existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
     }
     function generateArray(length){
 
