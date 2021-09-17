@@ -73,7 +73,9 @@
 
                if ( morzeCollectionDotsAndNumbers[symb] != undefined) result += morzeCollectionDotsAndNumbers[symb];
                else {
-
+                  result += "none";
+                  continue;
+                  //cdoe bellow is not working
                   document.getElementById("key-1").innerHTML = "Был найден неизвестный символ : " + symb;
 
                   document.getElementById('num2').addEventListener('input', function() {
@@ -87,14 +89,16 @@
                   let value = document.getElementById("num-2").value;
                   //buttons
                   document.getElementById('but1').addEventListener('onclick', function() {
-                     document.getElementById('key-1').innerText = this.value;
+                     /*document.getElementById('key-1').innerText = this.value;
                      morzeCollectionDotsAndNumbers.set(symb, value);
-                     result += value ;
+                     result += value ;*/
+                     alert("Ну я же просил :(");
 
                   });
                   document.getElementById('but1').addEventListener('onclick', function() {
-                     document.getElementById('key-1').innerText = this.value;
-                     result += "none";
+                     /*document.getElementById('key-1').innerText = this.value;
+                     result += "none";*/
+                     alert("Больше так не делайте!");
 
                   });
                }
@@ -119,9 +123,6 @@
 
         }return false;
     }
-
-    //following funcions are the solution
-    //@Max_on_green_
 
     //the function which attempts
     //find out if the string is wtitten correctly
