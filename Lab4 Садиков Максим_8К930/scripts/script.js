@@ -74,13 +74,14 @@
                if ( morzeCollectionDotsAndNumbers[symb] != undefined) result += morzeCollectionDotsAndNumbers[symb];
                else {
 
-                   document.getElementById("key-1").innerHTML = "Был найден неизвестный символ : " + symb;
+                  document.getElementById("key-1").innerHTML = "Был найден неизвестный символ : " + symb;
 
                   document.getElementById('num2').addEventListener('input', function() {
                      document.getElementById('key-2').innerText = this.value + " ?";
+
                   });
                   //input morze text
-                  document.getElementById("key-1").innerHTML += " Экваивалент эл. " + symb 
+                  document.getElementById("key-1").innerHTML += " Экваивалент эл. " + symb
                   +" в азбуке Морзе =  " ;
 
                   let value = document.getElementById("num-2").value;
@@ -89,10 +90,12 @@
                      document.getElementById('key-1').innerText = this.value;
                      morzeCollectionDotsAndNumbers.set(symb, value);
                      result += value ;
+
                   });
                   document.getElementById('but1').addEventListener('onclick', function() {
                      document.getElementById('key-1').innerText = this.value;
-                     result += "none" ;
+                     result += "none";
+
                   });
                }
             }

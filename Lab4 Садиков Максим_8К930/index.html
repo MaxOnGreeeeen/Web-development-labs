@@ -9,11 +9,14 @@
         <div class = "block-1"><p class = "p-1">Лабораторная работа номер 4</p>
             <p class = "p-2">14.	Создайте функцию, которая принимает строку в качестве аргумента и возвращает эквивалент кода Морзе.</p>
         </div>
-        <input type="text" class ="border-bottom-input" title = "Введите текст" id="num1" class="button"/>
-        <button id = "sup" class="button c-button" onclick="view()"> Рассчитать </button>
-        <p class = "button" id="result"></p>
+        <div class = block-2>
+          <input type="text" class ="border-bottom-input" title = "Введите текст" id="num1" class="button"/>
+          <button id = "sup" class="button c-button" onclick="view()"> Рассчитать </button>
+          <p class = "button" id="result"></p>
+        </div>
 
-        <form name="block-1">
+
+          <form name="block-1" class = "block-1">
 
             <input  class ="border-bottom-input" type="text" title = "Введите текст" id="num2" class="button"/>
             <p id = "key-1" ></p>
@@ -21,9 +24,8 @@
             <button class="button c-button"  id ="but1" >Да</button>
             <button class="button c-button groot"  id ="but2">Нет</button>
 
-        </form>
-        <ul class = "block-2">
-
+          </form>
+        <ul>
             <li class = id ="numbers"></li>
             <li id = "result-1"></li>
             <li id = "result-2"></li>
