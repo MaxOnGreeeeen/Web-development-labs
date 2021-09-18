@@ -22,9 +22,6 @@
            else document.getElementById("result-2").innerHTML = "Таких чисел не существует";
         }
     }
-    function insertAfter(newNode, existingNode) {
-        existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
-    }
     function generateArray(length){
 
         let array = new Array(length);
