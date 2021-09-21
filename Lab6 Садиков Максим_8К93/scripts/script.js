@@ -29,17 +29,48 @@
            else document.getElementById("result-1").innerHTML = "Круги не пересекаются";
         }
     }
+    function graphic(x,y,r,x1,y1,r1){
+
+        let z = 40; // масштаб
+        let c = document.querySelector('canvas');
+        let ctx = c.getContext('2d');
+
+        // центровочка
+        ctx.translate(c.width/2, c.height/2)
+
+        // сетка
+        ctx.beginPath();
+        for (let x = -3; x <3; x++) {
+          ctx.moveTo(x*z, -c.height/2);
+          ctx.lineTo(x*z, c.height/2);
+          ctx.moveTo(-c.width/2, x*z);
+          ctx.lineTo(c.width/2, x*z);
+        }
+        ctx.stroke();
+
+        // график функции
+        ctx.strokeStyle = "#3c4043";
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI*2, true);
+        ctx.arc(x1, y1, r1, 0, Math.PI*2, true);
+
+        ctx.stroke();
+    }
     function solve(dataConvertedCircle1, dataConvertedCircle2){
+
         //создаём алгоритм решения
         //основной критерий r1 + r2 > d, d - расстояние между окружн.
         //1 круг
         let a1 = dataConvertedCircle1[1];
         let b1 = dataConvertedCircle1[2];
         let r1 = dataConvertedCircle1[0];
+
         //2 круг
         let a2 = dataConvertedCircle2[1];
         let b2 = dataConvertedCircle2[2];
         let r2 = dataConvertedCircle2[0];
+        graphic(a1,b1,r1, a2, b2, r2);
         //найдём расстояние
         if ( a1 != a2 && b1 != b2 ){
 
@@ -70,8 +101,9 @@
     function convertToInteger(inputFromUser){
 
         let array = inputFromUser.split(" ").map(Number);
+        console.log(array);
         for (let i = 0; i < array.length; i++) {
-           if ( isNaN(array[i]) || array[i] == '') return -1;
+           if ( isNaN(array[i]) || array[i] === '') { console.log("hello"); console.log(i); return -1;}
         }
         return array;
     }
