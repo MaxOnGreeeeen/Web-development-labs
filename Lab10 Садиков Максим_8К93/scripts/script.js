@@ -6,9 +6,15 @@
     function view(){
         //get the data from the user from our page
         var inputData = document.getElementById("num1").value;
-
-        var arrayResult = new Array();
-        var newArray = pushFunction(inputData, arrayResult);
+        if (inputData.length < 2) {
+          var newArray = -1;
+          document.getElementById("result").innerHTML =
+             "Некорректно введены данные";
+          return null;
+        }else{
+          var arrayResult = new Array();
+          var newArray = pushFunction(inputData, arrayResult);
+        }
         //чтобы убедиться в корректности полученного многомерного массива
         console.log(newArray);
         //check the correctness of the data
@@ -34,7 +40,8 @@
       let regExp1 = new RegExp(/\]+/g);
       let res2 = inputData.match(regExp1);
       if ( inputData.length === 0 || inputData.charAt(0) !== "["
-          || res1[0].length !== res2[0].length ){
+          || res1[0].length !== res2[0].length && res1.length !== 0 &&
+          res2.length !== 0){
         return -1;
       } let i = 1;
       while ( i < inputData.length){
