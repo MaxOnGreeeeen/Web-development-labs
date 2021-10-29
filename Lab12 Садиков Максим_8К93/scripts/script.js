@@ -25,8 +25,9 @@ class JSONObject{
     localStorage.setItem(localStorage.length, newObject );
   }
 }
-//function to create buttons
+//function to create bujttons
     function addJsonObject(){
+
 
        var nameOfPerson = document.getElementById('name').value;
        var lastnameOfPerson = document.getElementById('lastName').value;
@@ -39,6 +40,8 @@ class JSONObject{
           )){
              var jsonObject = new JSONObject(nameOfPerson,lastnameOfPerson,ageOfPerson);
             jsonObject.addToArray();
+            document.getElementById("result").innerHTML =
+            "Пользователь успешно добавлен";
        }else
         document.getElementById("result").innerHTML =
         "Некорректно введены данные";
@@ -67,9 +70,11 @@ class JSONObject{
     function clearLocalStorage(){
        localStorage.clear();
        document.getElementById("result-1").innerHTML = '';
+       document.getElementById("result").innerHTML =
+       "Данные очищены";
     }
-    function findJsonObject(keyToSearch){
-        let lowerKey = keyToSearch.toLowerCase();
+
+    function findJsonObject(keyToSearch){ let lowerKey = keyToSearch.toLowerCase();
         let foundObjects = [];
         for (let i = 0; i < localStorage.length; i++){
 

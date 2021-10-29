@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="assets/stylesheets/main.css">
+</head>
+  <body>
+
+      <div class = "block">
+        <div class = "block-1">
+          <p class = "p-1">Лабораторная работа №13</p>
+          <p class = "p-2">Напишите функцию, которая принимает строку, столбец (для идентификации конкретной ячейки),
+            строку для обновления содержимого этой ячейки в HTML-таблице, и затем обновляет её</p>
+        </div>
+
+        <div class = "block-2" id = "sh">
+          <ul class = "pz-1">
+              <li id = "ha" class ="res res-big">Введите данные пользователя</li>
+          </ul>
+          <ul class ="new-div">
+            <li><a class ="res res-fin">Введите имя:</a><input type="text" class ="border-bottom-input" title = "Введите текст" id="name" class="button"/></li>
+            <li><a class ="res res-fin">Введите фамилию: </a><input type="text" class ="border-bottom-input" title = "Введите текст" id="lastName" class="button"/></li>
+            <li><a class ="res res-fin">Введите возраст:</a><input type="text" class ="border-bottom-input" title = "Введите текст" id="age" class="button"/></li>
+          </ul>
+            <p class = "button right-float" id="result"></p>
+          <div class = "right-float">
+            <button id = "add" class="button c-button" onclick="addJsonObject()"> Добавить </button>
+            <button id = "clear" class="button c-button" onclick="clearLocalStorage()"> Очистить </button>
+          </div>
+          <div class = "new-div">
+            <table id="table"></table>
+          </div>
+          <div class="right-float contol-width" >
+            <button id = "sup" class="button c-button " onclick="showTable()">Показать</button>
+            <button id = "cleatUsers" class="button c-button " onclick="unshowUsers()">Скрыть</button>
+          </div>
+        </div>
+        <div class = "new-div">
+            <a class ="res res-big">Введите через запятую <br> столбец, строку, данные</a>
+            <input type="text" class ="border-bottom-input" title = "Введите текст" id="data" class="button"/>
+              <button id = "execute" class="button c-button" onclick="view()"> Изменить </button>
+              <p class = "button right-float" id="currentError"></p>
+        </div>
+
+        <div class = "block-1">
+          <p>The sword of destiny has two edges </p>
+        </div>
+    </div>
+    <script src = "scripts/script.js">
+    </script>
+  </body>
+</html>

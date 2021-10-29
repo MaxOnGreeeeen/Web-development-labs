@@ -37,8 +37,10 @@
         else return false;
     }
     function solve(currentData, month){
+        let monthparse =  parseInt(currentData.substr(5,currentData.length - 1)) - 1;
         let date = new Date(currentData.substr(0,4),
-        currentData.substr(5,currentData.length - 1));
+        monthparse);
         date.setMonth(date.getMonth() + parseInt(month));
-        return date.getFullYear() + " " + date.getMonth();
+        let monther = date.getMonth() + 1;
+        return date.getFullYear() + " " +  monther;
     }
